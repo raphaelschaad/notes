@@ -1,4 +1,5 @@
 IOS CODE GUIDELINES
+
 [Raphael Schaad](https://twitter.com/raphaelschaad)
 
 Some personal guidelines for writing iOS Objective-C code. They result from my development experience in past years[1], where I've attempted to dig up robust solutions to everyday situations and write them down as small building blocks for lookup. Although Swift seems like the inevitable future, I currently (2018) still use Objective-C effectively, and don't seem to be alone.
