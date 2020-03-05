@@ -71,6 +71,11 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     $ git clean -xfd # Delete untracked files
     $ git log --all --author="Raphael" # Show commits by author (across all branches)
 
+# Git bisect'ing bugs
+    $ git bisect start # cd to repo's root folder first
+    $ git bisect bad # Current version is bad
+    $ git bisect good 1.19.0 # 1.19.0 is known to be good
+
 # Moving local commits from master to feature branch
     ... local commits on master ...
     $ git checkout -b feature-branch
