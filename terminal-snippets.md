@@ -265,3 +265,11 @@ launchd is the preferred way of scheduling such processes on macOS (not cron job
 
 A common scenario is that AirPlayUIAgent disables user idle display sleep for AirPlay screen.
 PreventUserIdleSystemSleep (Handoff etc.) does not have the same effect.
+
+**HTTP POST JSON body to API**
+
+    > curl --header 'Content-Type: application/json' \
+    > --data '{"username":"xyz","password":"xyz"}' \
+    > <URL>
+
+`--request POST` is optional if `--data` is specified. `--header` for short is `-H` and `--data` for short is `-d`.
