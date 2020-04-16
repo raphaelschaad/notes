@@ -12,16 +12,13 @@ Blog post [My favourite Git commit](https://fatbusinessman.com/2019/my-favourite
 
 # Branch naming convention
 Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `<type>`:
-1. `feature` Add a new feature.
-2. `bugfix` Address a known issue.
-3. `style` Format (e.g. whitespace), add missing semicolons, etc.
-4. `content` Change content (text, image, etc.).
-5. `documentation` Add comments or documentation.
-6. `test` Add tests.
-7. `performance` Improve performance without changing the function.
-8. `refactor` Restructure or rename code without changing the function.
-9. `chore` Maintain (new syntax, auxiliary tools, etc.)
-10. `experiment` Do not merge.
+1. `feature` Add/remove a new user-facing feature or make an improvement (performance etc.).
+1. `bugfix` Resolve a known user-facing issue.
+1. `content` Change user-facing content (UI copy, asset, color, etc.).
+1. `chore` Improve code base (internal tool, analytics, refactoring/formatting, etc.).
+1. `test` Improve code testing.
+1. `documentation` Improve code comment or documentation.
+1. `experiment` Do anything! Do not merge to master.
 
 For `<name>` be descriptive but keep it short. Use dashed-lowercase-multi-words (kebab case).
 
