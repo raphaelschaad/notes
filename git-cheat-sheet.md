@@ -2,7 +2,7 @@ GIT CHEAT SHEET
 
 A collection of useful Git commands and good Git practices.
 
-Also see my dotfiles [.gitconfig](https://github.com/raphaelschaad/dotfiles/blob/master/.gitconfig) and [.gitignore_global_macos](https://github.com/raphaelschaad/dotfiles/blob/master/.gitignore_global_macos).
+Also see my dotfiles [.gitconfig](https://github.com/raphaelschaad/dotfiles/blob/main/.gitconfig) and [.gitignore_global_macos](https://github.com/raphaelschaad/dotfiles/blob/main/.gitignore_global_macos).
 
 # Links
 - [Understanding the Git Workflow](https://sandofsky.com/blog/git-workflow.html)
@@ -18,7 +18,7 @@ Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `
 1. `chore` Improve code base (internal tool, analytics, refactoring/formatting, etc.).
 1. `test` Improve code testing.
 1. `documentation` Improve code comment or documentation.
-1. `experiment` Do anything! Do not merge to master.
+1. `experiment` Do anything! Do not merge to main.
 
 For `<name>` be descriptive but keep it short. Use dashed-lowercase-multi-words (kebab case).
 
@@ -27,15 +27,15 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
 
 # General commands
     > git fetch origin # update origin remote branches
-    > git rebase -p origin/master # (on master) Pull in changes and preserve feature branch on master, when it could fast-forward
-    > git rebase origin/master # (on feature branch) Prevent feature branch from diverging from master significantly
-    > git log master..origin/master # changes on the master branch (commit-level)
-    > git log -p master..origin/master # changes on the master branch (code-level, "patch")
-    > git merge origin/master # merge changes of master branch
+    > git rebase -p origin/main # (on main) Pull in changes and preserve feature branch on main, when it could fast-forward
+    > git rebase origin/main # (on feature branch) Prevent feature branch from diverging from main significantly
+    > git log main..origin/main # changes on the main branch (commit-level)
+    > git log -p main..origin/main # changes on the main branch (code-level, "patch")
+    > git merge origin/main # merge changes of main branch
     > git pull # update remote and merge changes in current branch
-    > git pull --rebase # avoid noisy/unhelpful merge commits on master when local changes were not made on a feature branch
+    > git pull --rebase # avoid noisy/unhelpful merge commits on main when local changes were not made on a feature branch
     > git checkout -b bug-toc-tile # create local branch
-    > git diff master -- Classes/FLStatusUpdateView.m # changes limited to file
+    > git diff main -- Classes/FLStatusUpdateView.m # changes limited to file
     > git add -i # interactively add parts
     > git add -p # interactively add parts (bypassing initial menu of -i and jump directly to patching)
     > git diff # unstaged changes vs. current HEAD
@@ -43,13 +43,13 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     > git reset HEAD # unstage
     > git reset --hard # discard uncommitted changes; use with caution
     > git commit
-    > git diff master > bug-toc-file.patch
-    > git checkout master
+    > git diff main > bug-toc-file.patch
+    > git checkout main
     > git merge bug-toc-tile
-    > git push origin master # push current local branch to remote branch named `master` (creates if doesn't exist)
+    > git push origin main # push current local branch to remote branch named `main` (creates if doesn't exist)
     > git branch -d bug-toc-tile # delete a local branch
     > git branch -D bug-toc-tile # force delete an unmerged local branch
-    > git push --force origin ui-fixes # force push to a remote branch (e.g. after rebasing from master)
+    > git push --force origin ui-fixes # force push to a remote branch (e.g. after rebasing from main)
     > git push origin :ui-fixes # delete a remote branch
     > git cherry-pick 5c294197597a59d63e00b32835487d289aed1afa # on branch to cherry-pick to the commit, creates new commit with new hash
     > git checkout path/to/file/to/revert # discard changes in specific file; don't use reset --hard for this
@@ -63,7 +63,7 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     > git checkout curator Classes/FLSheetViewController.h # copy file from other branch, "curator" could also be a specific commit hash
     > git remote add upstream https://github.com/octocat/Spoon-Knife.git # keep track of original repo in fork
     > git fetch upstream # pull in new changes of original repo in fork without updating it
-    > git merge upstream/master # update fork with changes of original repo
+    > git merge upstream/main # update fork with changes of original repo
     > git ls-files # At root of repo, shows all files tracked by git
     > git clean -xfd # Delete untracked files
     > git log --all --author="Raphael" # Show commits by author (across all branches)
@@ -73,11 +73,11 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     > git bisect bad # Current version is bad
     > git bisect good 1.19.0 # 1.19.0 is known to be good
 
-# Moving local commits from master to feature branch
-    ... local commits on master ...
+# Moving local commits from main to feature branch
+    ... local commits on main ...
     > git checkout -b feature-branch
-    > git checkout master
-    > git reset --hard origin/master
+    > git checkout main
+    > git reset --hard origin/main
     > git checkout feature-branch
 
 # Stashing
@@ -115,21 +115,21 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     > git commit -m "Checkout JSONKit at v1.4"
 
 ## Fix/customize submodule
-    > git checkout -b fix # always on separate branch or master, some submodules are in detached HEAD mode (checked out at last stable release)
+    > git checkout -b fix # always on separate branch or main, some submodules are in detached HEAD mode (checked out at last stable release)
     ... fix ...
     > git commit -a -m "fix"
     > git push # to GitHub
     > git add <submodule> # back in superproject
     > git commit -m "Fixed submodule."
-    > git push origin master # to GitHub
+    > git push origin main # to GitHub
 
 ## Update submodule (watch original repos on GitHub)
     > git fetch upstream # fetch changes from original to our fork
-    > git merge upstream/master # merge changes in
-    > git push origin master # to GitHub
+    > git merge upstream/main # merge changes in
+    > git push origin main # to GitHub
     > git add <submodule> # back in superproject
     > git commit -m "Updated submodule."
-    > git push origin master # to GitHub
+    > git push origin main # to GitHub
 
     > git submodule update --init # usually you just want to register all submodules found in .gitmodules into .git/config and clone repos (and automatically check out in superproject specified commits) in this one step
     > git submodule update # somebody changed something within a submodule and you want the update (shows up modified:   3rdPartyUtils/MTStatusBarOverlay (new commits))
