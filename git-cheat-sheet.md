@@ -55,6 +55,7 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     > git checkout path/to/file/to/revert # discard changes in specific file; don't use reset --hard for this
     > git checkout . # discard changes in all unstaged files
     > git branch -m new-branch-name # rename current branch
+    > git log --grep=text # search for string "text" in commit messages
     > git log -Stext # search for string "text" in entire repo history
     > git checkout <deleting commit>^ -- path/to/deleted/file/to/restore
     > git commit --amend # Update latest commit with what's staged and/or reword its commit message
