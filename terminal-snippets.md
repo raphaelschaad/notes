@@ -274,3 +274,10 @@ PreventUserIdleSystemSleep (Handoff etc.) does not have the same effect.
     > <URL>
 
 `--request POST` is optional if `--data` is specified. `--header` for short is `-H` and `--data` for short is `-d`.
+
+
+**Open Google Chrome without window chrome (chromeless)**
+
+    > open -n -a "Google Chrome" --args "--app=<URL>"
+
+`-n` Opens new window, even if Chrome is already open
