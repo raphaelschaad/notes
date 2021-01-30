@@ -528,7 +528,7 @@ Default `.gitignore` for Xcode projects (place in root):
 
 ```
 # Global .gitignore
-# Files such as .DS_Store on macOS should be excluded system-wide: $ git config --global core.excludesfile "~/.gitignore_global_macos"
+# Files such as .DS_Store on macOS should be excluded system-wide: > git config --global core.excludesfile "~/.gitignore_global_macos"
 
 # Xcode
 build/*
@@ -548,7 +548,7 @@ profile
 ```
 
 ## CocoaPods
-Install on a new machine with `$ sudo gem install cocoapods` (see `apps.md`) and update with `$ sudo gem update cocoapods` (e.g. when trying to "pod install" and getting the cryptic error "Abort trap: 6").
+Install on a new machine with `> sudo gem install cocoapods` (see `apps.md`) and update with `> sudo gem update cocoapods` (e.g. when trying to "pod install" and getting the cryptic error "Abort trap: 6").
 
 To add a pod to a project, in its root, create the file `Podfile` and put in it (example):
 
@@ -560,7 +560,7 @@ target 'Yego' do
 end
 ```
 
-Then run `$ pod install`. From now on, open the `.xcworkspace` (not the `.xcodeproj` anymore).
+Then run `> pod install`. From now on, open the `.xcworkspace` (not the `.xcodeproj` anymore).
 
 To not commit all the downloaded files from the pods, add following snippet to `.gitignore`:
 
@@ -585,7 +585,7 @@ tmp_data
 ```
 
 ## Useful macOS paths for iOS development
-- Simulator App Dirs (find app with `$ find . -name "AppName.app"`): `~/Library/Application\ Support/iPhone\ Simulator/`
+- Simulator App Dirs (find app with `> find . -name "AppName.app"`): `~/Library/Application\ Support/iPhone\ Simulator/`
 - Installed Provisioning Profiles (used by Xcode/iTunes): `~/Library/MobileDevice/Provisioning\ Profiles/`
 - Xcode Device Software Images (can be disk hogs): `~/Library/MobileDevice/Software\ Images/`
 - Frameworks, Includes (e.g. `math.h`), and Libs: `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/`
