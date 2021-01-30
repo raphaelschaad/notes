@@ -548,7 +548,7 @@ profile
 ```
 
 ## CocoaPods
-Install on a new machine with `> sudo gem install cocoapods` (see `apps.md`) and update with `> sudo gem update cocoapods` (e.g. when trying to "pod install" and getting the cryptic error "Abort trap: 6").
+Install on a new machine with `> sudo gem install cocoapods` and update with `> sudo gem update cocoapods` (e.g. when trying to "pod install" and getting the cryptic error "Abort trap: 6").
 
 To add a pod to a project, in its root, create the file `Podfile` and put in it (example):
 
