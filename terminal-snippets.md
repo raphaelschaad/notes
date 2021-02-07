@@ -281,3 +281,11 @@ PreventUserIdleSystemSleep (Handoff etc.) does not have the same effect.
     > open -n -a "Google Chrome" --args "--app=<URL>"
 
 `-n` Opens new window, even if Chrome is already open
+
+
+**Full brew (cask) update/upgrade**
+
+    > brew update && brew upgrade
+
+`update` update the formulae and Homebrew itself (including all casks)
+`upgrade` upgrade everything that is outdated (again, including all casks)
