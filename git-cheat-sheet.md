@@ -69,7 +69,7 @@ Open pull requests with the GitHub web interface. There is the CLI tool `hub` bu
     > git clean -xfd # Delete untracked files
     > git log --all --author="Raphael" # Show commits by author (across all branches)
 
-# Git bisect'ing bugs
+# Git bisect bugs
     > git bisect start # Ensure to be in the repo's root folder.
     > git bisect bad # Mark currently checked-out commit as bad.
     > git checkout <COMMIT> # Checkout last known commit to be good; can also directly `> git bisect good <COMMIT>`.
