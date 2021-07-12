@@ -289,3 +289,8 @@ PreventUserIdleSystemSleep (Handoff etc.) does not have the same effect.
 
 `update` update the formulae and Homebrew itself (including all casks)
 `upgrade` upgrade everything that is outdated (again, including all casks)
+
+
+**List entitlements of an app (declared for build in PList)**
+
+    > codesign -d --entitlements :- /Applications/Whatever.app/
