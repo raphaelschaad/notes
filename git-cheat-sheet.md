@@ -22,6 +22,21 @@ Use hierarchical branch names to group branches: `<type>/<name>`. Examples for `
 
 For `<name>` be descriptive but keep it short. Use dashed-lowercase-multi-words (kebab case).
 
+# Replacing master with main on GitHub
+([Original inspiration](https://dev.to/afrodevgirl/replacing-master-with-main-in-github-2fjf))
+
+In the local repo root:
+`> git branch --move master main`
+`> git push --set-upstream origin main`
+
+On github.com, navigate to the repo > _Settings_ > _Branches_ > _Default branch_ > _Switch to another branch_ and update to "main". Also delete the [stale master branch](https://github.com/raphaelschaad/raphaelschaad.github.io/branches).
+
+Update other local replicas of the repos with:
+`> git checkout --track origin/main`
+`> git branch --delete master`
+
+Ensure to update all deployments (e.g., Heroku, GitHub Pages), configs (e.g., .gitconfig), documentations (e.g., README.md), etc.
+
 # Pull Requests
 Open pull requests with the GitHub web interface. There is the CLI tool `hub` but I think it's rare enough of an action and the web interface is clearer than it would justify to do it in any other way.
 
