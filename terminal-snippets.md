@@ -166,6 +166,11 @@ FFmpeg direct GIF export is dithered as hell, so go via PNG
 `-qscale:v` for JPG output quality (2-31, 31 being the worst)
 
 
+**Export/extract the audio as mp3 from mp4 video**
+
+    > ffmpeg -i input.mp4 -vn -acodec libmp3lame output.mp3
+
+
 **Speed up (/slow down) video**
 
     > ffmpeg -i input.mp4 -filter:v "setpts=0.5*PTS" output.mkv
